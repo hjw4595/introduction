@@ -1,12 +1,14 @@
-import { Box } from "@mui/material";
-
-import Main from "../components/Main";
+import Intro from "../pages/Intro";
+import FullPageScroll from "../components/commons/FullpageScroll";
+import Experience from "../pages/Experience";
 
 function MainContainer() {
   return (
-    <Box>
-      <Main />
-    </Box>
+    <FullPageScroll>
+      <Intro />
+      <Experience />
+      <Intro />
+    </FullPageScroll>
   );
 }
 

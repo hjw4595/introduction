@@ -2,18 +2,25 @@ import { Box } from "@mui/material";
 
 interface SectionProps {
   children: React.ReactNode;
+  horizon?: boolean;
 }
 
-const SnapScroll = ({ children }: SectionProps) => {
+const SnapScroll = ({ children, horizon = false }: SectionProps) => {
   return (
     <Box
       sx={{
-        height: "100vh",
-        width: "100vw",
-        overflowY: "scroll",
-        scrollSnapType: "y mandatory",
+        display: "flex",
+        flexDirection: horizon ? "row" : "column",
+        overflowX: horizon ? "auto" : "hidden",
+        overflowY: horizon ? "hidden" : "auto",
+        scrollSnapType: horizon ? "x mandatory" : "y mandatory",
         scrollBehavior: "smooth",
-        scrollPadding: "1px",
+        width: "100vw",
+        height: "100vh",
+        border: "2px solid red",
+        // "&::-webkit-scrollbar": {
+        //   display: "none",
+        // },
       }}
     >
       {children}
