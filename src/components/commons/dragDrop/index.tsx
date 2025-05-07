@@ -77,7 +77,7 @@ export default function SequentialViewer() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown} // 엔터로 추가
-              placeholder="아이템을 입력하세요"
+              placeholder="추가할 모험단"
               style={{ flex: 1, padding: 8 }}
             />
             <button
