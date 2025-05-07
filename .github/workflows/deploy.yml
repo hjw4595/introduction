@@ -21,11 +21,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Give permission to vite (if necessary)
+        run: chmod +x ./node_modules/.bin/vite
+
       - name: Build project
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_TOKEN }}  # 변경된 부분
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
