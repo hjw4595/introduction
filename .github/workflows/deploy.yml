@@ -3,32 +3,34 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - master # 배포할 브랜치 설정 (예: master 또는 main)
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Ubuntu 환경에서 실행
 
     steps:
+      # 1. Repository Checkout
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2. Node.js 설치
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18 # Node.js 버전 설정
 
+      # 3. 의존성 설치
       - name: Install dependencies
         run: npm install
 
-      - name: Give permission to vite (if necessary)
-        run: chmod +x ./node_modules/.bin/vite
-
+      # 4. 빌드 실행
       - name: Build project
         run: npm run build
 
+      # 5. gh-pages 배포를 위한 권한 설정 (PAT을 사용)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          github_token: ${{ secrets.GH_TOKEN }} # Personal Access Token (PAT)을 사용하여 권한 부여
+          publish_dir: ./dist # Vite 빌드 결과가 저장된 디렉토리
