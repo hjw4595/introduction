@@ -1,24 +1,24 @@
-# Logs\r
-logs\r
-*.log\r
-npm-debug.log*\r
-yarn-debug.log*\r
-yarn-error.log*\r
-pnpm-debug.log*\r
-lerna-debug.log*\r
-\r
-node_modules\r
-dist\r
-dist-ssr\r
-*.local\r
-\r
-# Editor directories and files\r
-.vscode/*\r
-!.vscode/extensions.json\r
-.idea\r
-.DS_Store\r
-*.suo\r
-*.ntvs*\r
-*.njsproj\r
-*.sln\r
-*.sw?\r
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
