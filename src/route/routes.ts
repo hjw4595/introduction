@@ -6,7 +6,7 @@ const Experience = lazy(() => import("../pages/Experience"));
 
 const routes = [
   {
-    path: "/",
+    path: "/introduction",
     component: Main,
     name: "Main",
     exact: true,
