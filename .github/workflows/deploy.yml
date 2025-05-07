@@ -34,4 +34,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }} # Personal Access Token (PAT)을 사용하여 권한 부여
-          publish_dir: ./dist # Vite 빌드 결과가 저장된 디렉토리
+          publish_dir: ./dist
