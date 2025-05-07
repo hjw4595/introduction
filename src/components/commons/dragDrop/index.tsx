@@ -120,7 +120,7 @@ export default function SequentialViewer() {
                   onClick={handleDelete(index)}
                   style={{ marginLeft: 12 }}
                 >
-                  삭제
+                  ➖
                 </button>
               </div>
             ))}
