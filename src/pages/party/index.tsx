@@ -167,6 +167,7 @@ export default function PartyBuilder() {
           setDealerGroups(data.dealerGroups || []);
           setGroups(data.groups || []);
           setDealerToGroup(data.dealerToGroup || {});
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
           console.error("잘못된 JSON 파일입니다.");
         }
@@ -255,39 +256,38 @@ export default function PartyBuilder() {
       {/* 파티 그리드 */}
       <Grid container spacing={3}>
         {groups.map((group, groupIdx) => (
-          <Grid item xs={12} sm={6} md={4} key={groupIdx}>
-            <Paper
-              sx={{ p: 2 }}
-              onDragOver={(e) => e.preventDefault()}
-              onDrop={(e) => handleDrop(e, groupIdx)}
-            >
-              <Typography variant="h6" gutterBottom>
-                버퍼: {group.buffer}
-              </Typography>
-              <Box sx={{ display: "flex", mt: 1 }}>
-                {group.party.map((dealer, idx) => (
-                  <Paper
-                    key={idx}
-                    sx={{
-                      p: 1,
-                      mr: 1,
-                      backgroundColor: "#e0f7fa",
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
+          <Paper
+            sx={{ p: 2 }}
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={(e) => handleDrop(e, groupIdx)}
+          >
+            <Typography variant="h6" gutterBottom>
+              버퍼: {group.buffer}
+            </Typography>
+            <Box sx={{ display: "flex", mt: 1 }}>
+              {group.party.map((dealer, idx) => (
+                <Paper
+                  key={idx}
+                  sx={{
+                    p: 1,
+                    mr: 1,
+                    backgroundColor: "#e0f7fa",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  {dealer}
+                  <Box
+                    onClick={() => removeDealerFromGroup(groupIdx, dealer)}
+                    sx={{ cursor: "pointer" }}
                   >
-                    {dealer}
-                    <Box
-                      onClick={() => removeDealerFromGroup(groupIdx, dealer)}
-                    >
-                      ➖
-                    </Box>
-                  </Paper>
-                ))}
-              </Box>
-            </Paper>
-          </Grid>
+                    ➖
+                  </Box>
+                </Paper>
+              ))}
+            </Box>
+          </Paper>
         ))}
       </Grid>
 
