@@ -1,14 +1,10 @@
 import { Box } from "@mui/material";
 
 import HorizontalScrollSection from "../../components/commons/FullpageScroll/Horizon";
-import PartyDistributor from "../party";
 
 function Experience() {
   return (
     <HorizontalScrollSection>
-      <Box>
-        <PartyDistributor />
-      </Box>
       <Box>2</Box>
       <Box>3</Box>
     </HorizontalScrollSection>

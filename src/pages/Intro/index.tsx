@@ -1,6 +1,4 @@
 import { Box } from "@mui/material";
-import DragDropPage from "../../components/commons/dragDrop";
-
 // const SIMPLE_INTRO = "안녕하세요. 프론트엔드 개발자 홍정완입니다.";
 // const PHONE = "010-8982-6260";
 // const EMAIL = "hongjung73@gmail.com";
@@ -13,11 +11,7 @@ import DragDropPage from "../../components/commons/dragDrop";
 // };
 
 function Intro() {
-  return (
-    <Box sx={{ display: "flex" }}>
-      <DragDropPage />
-    </Box>
-  );
+  return <Box sx={{ display: "flex" }}>{/* <DragDropPage /> */}</Box>;
 }
 
 export default Intro;

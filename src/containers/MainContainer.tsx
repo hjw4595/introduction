@@ -1,13 +1,11 @@
-import Intro from "../pages/Intro";
 import FullPageScroll from "../components/commons/FullpageScroll";
-import Experience from "../pages/Experience";
+import FogGodRaid from "../components/FogGodRaid";
 
 function MainContainer() {
   return (
     <FullPageScroll>
-      <Intro />
-      <Experience />
-      <Intro />
+      <FogGodRaid />
+      <div></div>
     </FullPageScroll>
   );
 }
